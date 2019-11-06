@@ -1,0 +1,28 @@
+{
+  "beers": [
+    {
+      "id": "1",
+      "name": "Pilsner Urquel",
+      "tagline": "Great beer",
+      "description": "Beer from Czech Republic"
+    },
+    {
+      "id": "2",
+      "name": "Carlsberg",
+      "tagline": "Cool beer",
+      "description": "Nordic beer?"
+    },
+    {
+      "id": "3",
+      "name": "Zlaty Bazant",
+      "tagline": "Golden one",
+      "description": "Beer from Slovak Republic"
+    },
+    {
+      "id": "4",
+      "name": "Kozel",
+      "tagline": "Random tagline",
+      "description": "Another beer"
+    }
+  ]
+}
