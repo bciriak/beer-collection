@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Header} from './Header'
+import Header from './Header'
 import BeerForm from './BeerForm'
 import {editBeer, removeBeer} from '../actions/beers'
 

@@ -7,12 +7,17 @@ class BeerDirectoryPage extends React.Component {
     super(props)
 
     this.state = {
-      beers: []
+      beers: [],
+      page: 1
     }
   }
 
   componentDidMount() {
-    fetch('https://api.punkapi.com/v2/beers')
+    this.getBeers(1)
+  }
+
+  getBeers = (page) => {
+    fetch(`https://api.punkapi.com/v2/beers?page=${page}`)
       .then((response) => {
         return response.json()
       })
@@ -26,12 +31,29 @@ class BeerDirectoryPage extends React.Component {
       })
   }
 
+  nextPage = () => {
+    this.setState((state, props) => ({
+      page: state.page + 1
+    }))
+    this.getBeers(this.state.page)
+  }
+
+  prevPage = () => {
+    this.setState((state, props) => ({
+      page: state.page - 1
+    }))
+    this.getBeers(this.state.page)
+  }
+
   render() {
     return (
       <div>
         <Header/>
         <div className="content-container">
           <h3>Beer Directory</h3>
+          <button onClick={this.nextPage}>Next Page</button>
+          <span>Page: {this.state.page}</span>
+          <button onClick={this.prevPage}>Previous Page</button>
           <BeerList isOwnBeer={false} beers={this.state.beers}/>
         </div>
       </div>
